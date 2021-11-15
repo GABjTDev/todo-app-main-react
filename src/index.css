@@ -1,0 +1,254 @@
+/* 'Josefin Sans' */
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+
+:root {
+  --font: "Josefin Sans", "Arial";
+
+  --brightBlue: hsl(220, 98%, 61%);
+
+  /* ### Light Theme */
+
+  --veryLightGray: hsl(0, 0%, 98%);
+  --veryLightGrayishBlue: hsl(236, 33%, 92%);
+  --lightGrayishBlue: hsl(233, 11%, 84%);
+  --darkGrayishBlue: hsl(236, 9%, 61%);
+  --veryDarkGrayishBlue: hsl(235, 19%, 35%);
+
+  /* ### Dark Theme */
+
+  --veryDarkBlue: hsl(235, 21%, 11%);
+  --veryDarkDesaturatedBlue: hsl(235, 24%, 19%);
+  --lightGrayishBlue: hsl(234, 39%, 85%);
+  --lightGrayishBlueHover: hsl(236, 33%, 92%); /*Hover*/
+  --darkGrayishBlue: hsl(234, 11%, 52%);
+  --veryDarkGrayishBlue: hsl(233, 14%, 35%);
+  --veryDarkGrayishBlue: hsl(237, 14%, 26%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font);
+  font-size: 18px;
+}
+
+.bg{
+  width: 100%;
+  height: 100vh;
+  background-color: var(--veryLightGray);
+  position: relative;
+}
+
+.container {
+  width: 90%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+
+/*LIGHT*/
+.bg-img{
+  width: 100%;
+  height: 200px;
+  background: url('./images/bg-mobile-light.jpg') no-repeat;
+  background-size: cover;
+  position: absolute;
+}
+
+.head{
+  position: relative;
+  z-index: 100;
+  top: 40px;
+}
+
+.title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.title h1{
+  letter-spacing: .5rem;
+  font-size: 1.5rem;
+}
+
+.head input{
+  width: 100%;
+  outline: none;
+  border: none;
+  padding: 18px 40px;
+  border-radius: 5px;
+}
+
+.main{
+  position: relative;
+  top: 60px;
+  z-index: 100;
+  background-color: var(--veryLightGray);
+  box-shadow: 0 5px 10px rgb(0 0 0 / 20%);
+  border-radius: 5px;
+}
+
+.todo-item{
+  display: flex;
+}
+
+.todo-item{
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid var(--veryLightGrayishBlue);
+}
+
+.todo-item .circle{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid var(--veryLightGrayishBlue);
+  margin-right: 10px;
+  cursor: pointer;
+  background: white;
+}
+
+.todo-item .circle.active{
+  background: url('./images/icon-check.svg') no-repeat, linear-gradient(to bottom right,hsl(192, 100%, 67%),hsl(280, 87%, 65%));
+  background-position: center;
+}
+
+.todo-item .circle.active ~ p{
+  text-decoration: line-through;
+  color: var(--darkGrayishBlue);
+}
+
+.bg.dark .todo-item .circle.active ~ p{
+  text-decoration: line-through;
+  color: var(--veryDarkGrayishBlue);
+}
+
+.todo-item p{
+  flex-grow: 1;
+  font-size: .85rem;
+  font-weight: 700;
+}
+
+.count{
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.count p,
+.count button{
+  font-weight: 400;
+  font-size: .9rem;
+  color: var(--lightGrayishBlue);
+}
+
+.count button{
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.options{
+  position: relative;
+  top: 90px;
+  width: 90%;
+  max-width: 300px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.options button{
+  padding: 5px 10px;
+  background: none;
+  font-weight: 700;
+  font-size: .9rem;
+  color: var(--lightGrayishBlue);
+  border: none;
+  cursor: pointer;
+}
+
+.options button.active{
+  color: var(--brightBlue);
+}
+
+.attribution{
+  position: relative;
+  top: 120px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.btn{
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/*DARK*/
+.bg.dark{
+  background-color: var(--veryDarkBlue);
+}
+
+
+.bg.dark .bg-img{
+  width: 100%;
+  height: 300px;
+  background: url('./images/bg-mobile-dark.jpg') no-repeat;
+  background-size: cover;
+  position: absolute;
+}
+
+.bg.dark .attribution{
+  color: var(--lightGrayishBlue);
+}
+
+
+@media screen and (min-width: 425px) {
+
+  .head{
+    padding-top: 40px;
+  }
+
+  .bg-img{
+    width: 100%;
+    height: 260px;
+    background: url('./images/bg-desktop-light.jpg') no-repeat;
+    background-size: cover;
+    position: absolute;
+  }
+
+  .bg.dark .bg-img{
+    width: 100%;
+    height: 260px;
+    background: url('./images/bg-desktop-dark.jpg') no-repeat;
+    background-size: cover;
+    position: absolute;
+  }
+
+  .bg.dark input{
+    background-color: var(--veryDarkDesaturatedBlue);
+    color: var(--lightGrayishBlue);
+  }
+
+  .bg.dark .main{
+    position: relative;
+    top: 60px;
+    z-index: 100;
+    background-color: var(--veryDarkDesaturatedBlue);
+    box-shadow: 0 5px 10px rgb(0 0 0 / 20%);
+    border-radius: 5px;
+  }
+
+  .bg.dark .todo-item p{
+    color: var(--lightGrayishBlue);
+  }
+}
