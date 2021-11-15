@@ -211,6 +211,23 @@ body {
   color: var(--lightGrayishBlue);
 }
 
+.bg.dark input{
+  background-color: var(--veryDarkDesaturatedBlue);
+  color: var(--lightGrayishBlue);
+}
+
+.bg.dark .main{
+  position: relative;
+  top: 60px;
+  z-index: 100;
+  background-color: var(--veryDarkDesaturatedBlue);
+  box-shadow: 0 5px 10px rgb(0 0 0 / 20%);
+  border-radius: 5px;
+}
+
+.bg.dark .todo-item p{
+  color: var(--lightGrayishBlue);
+}
 
 @media screen and (min-width: 425px) {
 
@@ -232,23 +249,5 @@ body {
     background: url('./images/bg-desktop-dark.jpg') no-repeat;
     background-size: cover;
     position: absolute;
-  }
-
-  .bg.dark input{
-    background-color: var(--veryDarkDesaturatedBlue);
-    color: var(--lightGrayishBlue);
-  }
-
-  .bg.dark .main{
-    position: relative;
-    top: 60px;
-    z-index: 100;
-    background-color: var(--veryDarkDesaturatedBlue);
-    box-shadow: 0 5px 10px rgb(0 0 0 / 20%);
-    border-radius: 5px;
-  }
-
-  .bg.dark .todo-item p{
-    color: var(--lightGrayishBlue);
   }
 }
